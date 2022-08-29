@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fff;
+}
+
+#wrapper {
+    background: #82b9dc;
+    height: 1000px;
+}
+
+#city {
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    font-family: Poppins;
+}
+.cardTemp h2{
+    text-align: center;
+    font-size: 100px;
+    color: #fff;
+    font-family: Poppins;
+}
+
+.cardTemp h3{
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    font-family: Poppins;
+}
+
+.medidas {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 150px;
+    text-align: center;
+    font-family: Poppins;
+    cursor: pointer;
+}
+
+.medidas h2{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.medidas i{
+    margin-bottom: 12px;
+    font-size: 40px;
+    color: #fff;
+}
+
+.previsao {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 40px;
+    font-family: Poppins;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.previsao > p{
+    margin-top: 80px;
+}
+
+.reload {
+    display: flex;
+    justify-content: end;
+    font-size: 50px;
+    margin-right: 80px;
+    color: #fff;
+    opacity: 0.8;
+}
+
+footer {
+    bottom: 0;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-family: Poppins;
+    color: #000;
+}
+
+footer a{
+   text-decoration: none;
+   color: #000;
+}
+
+footer a:hover{
+   text-decoration: underline;
+   color: rgb(44, 131, 212);
+}

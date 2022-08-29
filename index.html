@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Responsive -->
+<meta charset="utf-8">
+<meta name="viewport" ncontent="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- Title -->
+<title>PWA API OpenWheaterMap</title>
+<!-- Meta Tags required for Progressive Web App -->
+<meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+<meta name="theme-color" content="black">
+<!-- Manifest File link -->
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+
+</head>
+ 
+<body>
+
+    <div id="wrapper">
+        <h1 id="city"></h1>
+        <div class="reload">
+            <i onclick="Reload()" class="fa-solid fa-arrow-rotate-right"></i>
+        </div>
+        <div class="cardTemp">
+            <h3 class="max"><section id="3"></section></h3>
+            <h2><span>0</span>ºC</h2>
+            <h3><section id="4"></section></h3>
+        </div>
+        <div class="medidas">
+            <h2 
+            title="A umidade é referente a quantidade relativa de água retida na atmosfera"
+            ><i class="fa-solid fa-droplet"></i><section id="1"></section>Umidade</h2>
+            <h2 
+            title="Ventos fracos podem fazer balançar as folhas, os médios podem derrubar algumas folhas e sujar as ruas, mas tenha cuidado com previsões de rajadas de vento!"
+            ><i class="fa-solid fa-wind"></i><section id="5"></section>Ventos</h2>
+            <h2 
+            title="As nuvens podem nos ajudar a identificar as formações e precipitações de chuva"
+            ><i class="fa-solid fa-cloud"></i><section id="2"></section>Nuvens</h2>
+        </div>
+    </div>
+
+    <div class="previsao">
+        <h2>Previsões</h2>
+        <p id="chuva">Chuva</p>
+        <p id="vento">Ventos</p>
+        <p id="ceu">Céu</p>
+    </div>
+
+    <footer>
+        Desenvolvido por
+        <a href="https://www.linkedin.com/in/bruno-victor-oliveira-duarte/">Bruno Duarte |</a>
+        <a href="https://duartebruno1.000webhostapp.com/"> Code Overshadow</a>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/app.js"></script>
+    <!-- Ícones -->
+    <script src="https://kit.fontawesome.com/a9ac96b7ba.js" 
+    crossorigin="anonymous"></script>
+     <!-- ServiceWorker -->
+    <script>
+        window.addEventListener('load', () => {
+          registerSW();
+        });
+     
+        // Register the Service Worker
+        async function registerSW() {
+          if ('serviceWorker' in navigator) {
+            try {
+              await navigator
+                    .serviceWorker
+                    .register('serviceworker.js');
+            }
+            catch (e) {
+              console.log('SW registration failed');
+            }
+          }
+        }
+    </script>
+    <script>
+         function newPopup(){
+            varWindow = window.open (
+            'popup.html',
+            'pagina',
+            "width=350, height=255, top=100, left=110, scrollbars=no " );
+            }
+    </script>
+  </body>
+</html>
