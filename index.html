@@ -5,8 +5,10 @@
 <meta charset="utf-8">
 <meta name="viewport" ncontent="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="pragma" content="no-cache" />
 <!-- Title -->
-<title>PWA API OpenWheaterMap</title>
+<title>SUWA OpenWeather</title>
 <!-- Meta Tags required for Progressive Web App -->
 <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
 <meta name="theme-color" content="black">
@@ -21,16 +23,24 @@
 </head>
  
 <body>
-
     <div id="wrapper">
-        <h1 id="city"></h1>
-        <div class="reload">
-            <i onclick="Reload()" class="fa-solid fa-arrow-rotate-right"></i>
+      <div class="action">
+        <div class="notify">
+          <i onclick="notifyMe()" class="fa-solid fa-message"></i>
         </div>
+        <div class="reload">
+          <i onclick="Reload()" class="fa-solid fa-arrow-rotate-right"></i>
+        </div>
+      </div>
+        <h1 id="city"></h1>
+        <h3 id="time"></h3>
+        <h3 id="img"></h3>
         <div class="cardTemp">
-            <h3 class="max"><section id="3"></section></h3>
-            <h2><span>0</span>ºC</h2>
-            <h3><section id="4"></section></h3>
+            <h2><span>0</span>º</h2>
+            <div class="max">
+              <h3>Temp Max:<section id="3"></section></h3>
+              <h3>Temp Min:<section id="4"></section></h3>
+            </div>
         </div>
         <div class="medidas">
             <h2 
@@ -44,13 +54,24 @@
             ><i class="fa-solid fa-cloud"></i><section id="2"></section>Nuvens</h2>
         </div>
     </div>
-
     <div class="previsao">
         <h2>Previsões</h2>
-        <p id="chuva">Chuva</p>
-        <p id="vento">Ventos</p>
-        <p id="ceu">Céu</p>
-    </div>
+        <div class="obt">
+          <div id="avisoChuva" class="previsao-card">
+            <p id="chuva">Chuva</p>
+          </div>
+        </div>
+        <div class="obt">
+          <div id="avisoVento" class="previsao-card">
+            <p id="vento">Ventos</p>
+          </div>
+        </div>
+        <div class="obt">
+          <div id="avisoCeu" class="previsao-card">
+            <p id="ceu">Céu</p>
+          </div>
+        </div>
+      </div>
 
     <footer>
         Desenvolvido por
@@ -70,7 +91,7 @@
         });
      
         // Register the Service Worker
-        async function registerSW() {
+        async function registerSW() { 
           if ('serviceWorker' in navigator) {
             try {
               await navigator
@@ -82,14 +103,6 @@
             }
           }
         }
-    </script>
-    <script>
-         function newPopup(){
-            varWindow = window.open (
-            'popup.html',
-            'pagina',
-            "width=350, height=255, top=100, left=110, scrollbars=no " );
-            }
     </script>
   </body>
 </html>

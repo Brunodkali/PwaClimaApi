@@ -1,12 +1,12 @@
 {
-    "name":"PWA API OpenWeather",
-    "short_name":"PWA OpenWeather",
+    "name":"SUWA OpenWeather",
+    "short_name":"SUWA",
     "start_url":"index.html",
     "display":"standalone",
     "background_color":"green",
     "theme_color":"black",
     "scope": ".",
-    "description":"Essa PWA consome a API OpenWeatherMap.",
+    "description":"Essa PWA consome a API OpenWeatherMap e foi desenvolvida com o intuito de auxiliar na verificação do clima.",
     "icons":[
     {
     "src":"favicon/climate.png",
