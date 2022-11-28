@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Responsive -->
-<meta charset="utf-8">
-<meta name="viewport" ncontent="width=device-width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta http-equiv="cache-control" content="no-cache" />
-<meta http-equiv="pragma" content="no-cache" />
-<!-- Title -->
-<title>SUWA OpenWeather</title>
-<!-- Meta Tags required for Progressive Web App -->
-<meta name="apple-mobile-web-app-status-bar" content="#aa7700">
-<meta name="theme-color" content="black">
-<!-- Manifest File link -->
-<link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="css/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-
-
+  <meta charset="utf-8">
+  <meta name="viewport" ncontent="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <title>SUWA OpenWeather</title>
+  <!-- Meta Tags required for Progressive Web App -->
+  <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+  <meta name="theme-color" content="black">
+  <!-- Manifest File link -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
  
 <body>
     <div id="wrapper">
       <div class="action">
         <div class="notify">
-          <i onclick="notifyMe()" class="fa-solid fa-message"></i>
+          <i onclick="notificacao()" class="fa-solid fa-message"></i>
         </div>
         <div class="reload">
-          <i onclick="Reload()" class="fa-solid fa-arrow-rotate-right"></i>
+          <i onclick="recarregaPagina()" class="fa-solid fa-arrow-rotate-right"></i>
         </div>
       </div>
         <h1 id="city"></h1>
@@ -89,8 +85,7 @@
         window.addEventListener('load', () => {
           registerSW();
         });
-     
-        // Register the Service Worker
+        
         async function registerSW() { 
           if ('serviceWorker' in navigator) {
             try {
